@@ -1,3 +1,8 @@
+@import url('https://rsms.me/inter/inter.css');
+html { font-family: 'Inter', sans-serif; }
+@supports (font-variation-settings: normal) {
+  html { font-family: 'Inter var', sans-serif; }
+}
 .App {
   text-align: center;
 }
@@ -35,4 +40,228 @@
   to {
     transform: rotate(360deg);
   }
+}
+header {
+  display: flex;
+  flex-direction: row;
+  background: black;
+  justify-content: space-between;
+  width: 100vw;
+      padding: 5px;
+  background-size: cover;
+background-repeat: no-repeat;
+  background-image: url(https://doublegeste.com/TheCave/media/3D-model-of-the-cave-from-the-PDF-3D-viewer.png);
+  transition: all 0.5s ease-in-out;
+  height: 250px;
+  opacity: 1;
+}
+#header a {
+margin: auto;
+font-family: 'Inter', sans-serif;
+}
+video {
+  object-fit: cover!important;
+  width: 100vw;
+  z-index: 0;
+  position: absolute;
+  filter: grayscale();
+  opacity: 0.7;
+  left: 0;
+}
+
+.team img {
+
+
+width: 120px;
+height: 16vw;
+}
+header button {
+  width: 18vw;
+  font-family: monospace;
+  font-size: 2vw;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin: auto;
+  cursor: pointer;
+  text-transform: uppercase;
+  opacity: 1;
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  background: #ffffffa8;
+  border-radius: 0.5em;
+  /* border-color: white; */
+  /* backdrop-filter: drop-shadow(25px 4px 6px green); */
+  transition: all 0.3s ease-in-out;
+}
+
+header button:hover{
+  filter: invert();
+}
+
+body {
+  margin: 0!important;
+/*    	cursor: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' ...") 16 16, pointer;
+*/    }
+
+header img {
+  width: 20vw;
+  filter: invert(100%);
+
+}
+
+.title {
+  font-size: 3.5vw;
+position: absolute;
+color: white;
+top: 20px;
+/* right: 5vw; */
+margin: auto;
+width: 100vw;
+text-align: center;
+}
+
+
+#first_step {
+  width: 50vw;
+  margin: auto;
+ 
+  text-align: center;
+ 
+  padding: 1vw;
+  border-radius: 1em;
+  opacity: 1;
+  
+  display: block;
+  
+  /* height: 100vh; */
+  color: white;
+  padding: 3vw;
+  background: #0000004a;
+  border-radius: 1em;
+  border: solid 3px white;
+  backdrop-filter: blur(3px);
+
+}
+
+ #first_step button {
+  margin-top: 1vw;
+width: 100px;
+border-radius: 1em;
+}
+#second_step  {
+  width: 60vw;
+  margin: auto;
+  background: whitesmoke;
+  text-align: center;
+  /* margin-top: -40vh; */
+  color: white;
+  border-radius: 1em;
+  opacity: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 3vw;
+  background: #0000004a;
+  border-radius: 1em;
+  border: solid 3px white;
+  backdrop-filter: blur(3px);
+
+}
+
+#third_step {
+    width: 50vw;
+  margin: auto;
+  background: whitesmoke;
+  text-align: center;
+  margin-top: -40vh;
+  padding: 1vw;
+  border-radius: 1em;
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.buttons-entity {
+display: flex;
+flex-direction: row;
+justify-content: space-around;
+}
+#second_step img {
+  width: 120px;
+  cursor: pointer;
+}
+
+#third_step img {
+  width: 120px;
+  cursor:pointer;
+}
+
+#motto {
+  position: absolute;
+  right: 10px;
+  top: 200px;
+  color: white;
+}
+
+
+
+.desc {
+  text-align: left;
+  font-size: 1.5vw;
+  margin: auto;
+  display: block;
+  width: 70vw;
+  /* height: 100vh; */
+  color: white;
+  padding: 3vw;
+  background: #0000004a;
+  border-radius: 1em;
+  border: solid 3px white;
+  backdrop-filter: blur(3px);
+  
+}
+
+.main-container {
+  padding: 3vw;
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url(https://doublegeste.com/TheCave/media/le-releve-numerique-3D-de-la-grotte-ornee-du-pont-d-arc.webp);
+}
+
+.form_buttons {
+  border: solid 1px white;
+  border-radius: 1em;
+  color: white;
+}
+
+.play_buttons {
+  border: solid 1px white;
+    border-radius: 1em;
+    /* color: white; */
+    width: 40vw;
+    font-size: 5vw;
+    text-transform: uppercase;
+    padding: 1vw;
+    display: block;
+    margin: auto;
+    background-color: #e3e3e380;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    position: absolute;
+    
+    left: 30vw;
+    margin-top: 15vw;
+
+    
+}
+
+.UserInfo {
+  color: white;
+  z-index: 2;
+  position: absolute;
+}
+
+.play_buttons:hover {
+  filter: invert(100%);
 }

@@ -1,0 +1,42 @@
+.login {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(https://doublegeste.com/TheCave/media/le-releve-numerique-3D-de-la-grotte-ornee-du-pont-d-arc.webp);
+
+  }
+  .login__container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    
+    padding: 30px;
+    color: white;
+  padding: 3vw;
+  background: #0000004a;
+  border-radius: 1em;
+  border: solid 3px white;
+  backdrop-filter: blur(3px);
+  
+  }
+  .login__textBox {
+    padding: 10px;
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  .login__btn {
+    padding: 10px;
+    font-size: 18px;
+    margin-bottom: 10px;
+    border: none;
+    color: white;
+    background-color: black;
+  }
+  .login__google {
+    background-color: #4285f4;
+  }
+  .login div {
+    margin-top: 7px;
+  }
