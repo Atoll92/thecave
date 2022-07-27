@@ -27,6 +27,7 @@ import ThirdStep from './routes/ThirdStep';
 import RegisterTribe from './routes/RegisterTribe';
 import FourthStep from './routes/FourthStep';
 import FourthStep2 from './routes/FourthStep2';
+import HuntPrep from './routes/HuntPrep.jsx';
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -53,12 +54,12 @@ export default firebase;
 
 
  
-  const docRef =  addDoc(collection(db, "users"), {
-    first: "Ada",
-    last: "Lovelace",
-    born: 1815
-  });
-  console.log("Document written with ID: ", docRef.id);
+  // const docRef =  addDoc(collection(db, "users"), {
+  //   first: "Ada",
+  //   last: "Lovelace",
+  //   born: 1815
+  // });
+  // console.log("Document written with ID: ", docRef.id);
 //  catch (e) {
 //   console.error("Error adding document: ", e);
 // }
@@ -84,6 +85,7 @@ root.render(
       <Route path="register_tribe" element={<RegisterTribe />} />
       <Route path="fourth_step" element={<FourthStep />} />
       <Route path="fourth_step2" element={<FourthStep2 />} />
+      <Route path="huntprep" element={<HuntPrep />} />
    
     </Routes>
     
