@@ -47,28 +47,28 @@ onAuthStateChanged(auth, (user) => {
   });
 
 
-
-function submitName () {
+  function submitBio () {
     
-  const user = auth.currentUser;
-  const UserModelRef = doc(db, "users", (user.uid));
-  var username= document.getElementById("name").value;
-
-// Set the "capital" field of the city 'DC'
- updateDoc(UserModelRef, {
-  username: username
-});
-console.log(username)
-}
-
-
-
+    const user = auth.currentUser;
+    const UserModelRef = doc(db, "users", (user.uid));
+      var userbio = document.getElementById("bio").value;
+  
+  // Set the "capital" field of the city 'DC'
+   updateDoc(UserModelRef, {
+    bio: userbio
+  });
+  console.log(userbio)
+  }
+  
 
 
 
 
 
-const FirstStep = () => {
+
+
+
+const BioEdit = () => {
 
 
 
@@ -80,18 +80,19 @@ console.log("userID");
             <div className='main-container' >
             <div id="first_step">
         <h2>
-        Start your adventure by chosing a name :</h2>
+       Could you tell us more about yourself ? </h2>
+       <p>(describe your journey, your dreams, your fears.. (max limit for zozos : 1000 characters))</p>
         <form>
 
-     <input type="text" id="name" name="fname"/>
+     <textarea type="text" id="bio" name="fname"/>
      
   </form>
   {/* <button >Submit function</button> */}
-  <Link to="/secondstep"><button className='form_buttons2' onClick={submitName} >Submit</button></Link>
+  <Link to="/third_step"><button className='form_buttons2' onClick={submitBio} >Submit</button></Link>
       </div> 
       </div>
         </div>
     );
 };
 // export {username};
-export default FirstStep;
+export default BioEdit;

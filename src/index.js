@@ -28,6 +28,7 @@ import RegisterTribe from './routes/RegisterTribe';
 import FourthStep from './routes/FourthStep';
 import FourthStep2 from './routes/FourthStep2';
 import HuntPrep from './routes/HuntPrep.jsx';
+import BioEdit from './routes/BioEdit';
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -86,7 +87,7 @@ root.render(
       <Route path="fourth_step" element={<FourthStep />} />
       <Route path="fourth_step2" element={<FourthStep2 />} />
       <Route path="huntprep" element={<HuntPrep />} />
-   
+      <Route path="bio_select" element={<BioEdit />} />
     </Routes>
     
     </BrowserRouter>

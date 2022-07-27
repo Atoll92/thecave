@@ -6,21 +6,23 @@ import firebaseui from 'firebaseui';
 import { initializeApp } from "firebase/app";
 import { Link } from 'react-router-dom';
 import { getAuth } from "firebase/auth";
+import { doc } from 'firebase/firestore';
+import { updateDoc } from 'firebase/firestore';
+import { db } from '../firebase';
 
 
-
-const firebaseConfig = {
-    apiKey: "AIzaSyBb4lyuCg_sPZ3sWg90Qgh4FDWY_QMce8g",
-    authDomain: "the-cave-271e0.firebaseapp.com",
-    projectId: "the-cave-271e0",
-    storageBucket: "the-cave-271e0.appspot.com",
-    messagingSenderId: "1007665486927",
-    appId: "1:1007665486927:web:c24958b542ab8de5aade3a"
-  };
+// const firebaseConfig = {
+//     apiKey: "AIzaSyBb4lyuCg_sPZ3sWg90Qgh4FDWY_QMce8g",
+//     authDomain: "the-cave-271e0.firebaseapp.com",
+//     projectId: "the-cave-271e0",
+//     storageBucket: "the-cave-271e0.appspot.com",
+//     messagingSenderId: "1007665486927",
+//     appId: "1:1007665486927:web:c24958b542ab8de5aade3a"
+//   };
   
-  // Initialize Firebase
-  const firebase = initializeApp(firebaseConfig);
-const db = getFirestore(firebase);
+//   // Initialize Firebase
+//   const firebase = initializeApp(firebaseConfig);
+// const db = getFirestore(firebase);
 
 const auth = getAuth();
 const user = auth.currentUser;
@@ -38,21 +40,20 @@ if (user) {
 
 
 
-function submit () {
-    var animal= document.getElementById("1").value;
-    console.log("bumitted2");
-    // $("button").click(function() {
-    //     var fired_button = $(this).val();
-    //     alert(fired_button);
-    // });
+function submitTribeStatus () {
+    
+  const user = auth.currentUser;
+  const UserModelRef = doc(db, "users", (user.uid));
+  var tribe= document.getElementById("2").value;
 
-const docRef =  addDoc(collection(db, "users"), {
-    animal: animal,
-    user: user.uid
-  });
-  console.log("Document written with on SUBMIT on third step: ", docRef.id);
-
+// Set the "capital" field of the city 'DC'
+ updateDoc(UserModelRef, {
+  tribe_status: tribe
+});
+console.log(tribe)
 }
+
+
 
 
 const ThirdStep = () => {
@@ -63,11 +64,11 @@ const ThirdStep = () => {
             <div className="team" id="second_step">
         <h2>
         Are you on your own or are you already part of a tribe ?</h2>
-       <div onClick={submit} class="buttons-entity">
+       <div onClick={submitTribeStatus} class="buttons-entity">
         {/* <button id="1" type="submit" value="human" ><img src="https://doublegeste.com/TheCave/media/BushmanPainting8.svg"/></button><button><img src="https://doublegeste.com/TheCave/media/kisscc0-cave-painting-rock-art-rock-art-saharan-antelope-5b3e85716eee09.4176039315308240494544.svg"/></button><button><img src="https://doublegeste.com/TheCave/media/cRbQhp01.svg"/></button> */}
-        <Link to="/fourth_step"><button ><img src="https://doublegeste.com/TheCave/media/PngItem_452885.svg"/></button></Link>
+        <Link to="/fourth_step"><button id="2" value="alone" ><img src="https://doublegeste.com/TheCave/media/PngItem_452885.svg"/></button></Link>
         
-        <Link to="/register_tribe"><button ><img src="https://doublegeste.com/TheCave/media/662fcfe785a97ab5928ca2f641c4dd05.svg"/></button></Link>
+        <Link to="/register_tribe"><button id="3" value="tribed" ><img src="https://doublegeste.com/TheCave/media/662fcfe785a97ab5928ca2f641c4dd05.svg"/></button></Link>
         </div>
         
       </div> 
