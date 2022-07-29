@@ -29,26 +29,28 @@ import FourthStep from './routes/FourthStep';
 import FourthStep2 from './routes/FourthStep2';
 import HuntPrep from './routes/HuntPrep.jsx';
 import BioEdit from './routes/BioEdit';
+import UploadPic from './routes/UploadPic';
+import firebase from './firebase';
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
-const firebaseConfig = {
-  apiKey: "AIzaSyBb4lyuCg_sPZ3sWg90Qgh4FDWY_QMce8g",
-  authDomain: "the-cave-271e0.firebaseapp.com",
-  projectId: "the-cave-271e0",
-  storageBucket: "the-cave-271e0.appspot.com",
-  messagingSenderId: "1007665486927",
-  appId: "1:1007665486927:web:c24958b542ab8de5aade3a"
-};
+// const firebaseConfig = {
+//   apiKey: "AIzaSyBb4lyuCg_sPZ3sWg90Qgh4FDWY_QMce8g",
+//   authDomain: "the-cave-271e0.firebaseapp.com",
+//   projectId: "the-cave-271e0",
+//   storageBucket: "the-cave-271e0.appspot.com",
+//   messagingSenderId: "1007665486927",
+//   appId: "1:1007665486927:web:c24958b542ab8de5aade3a"
+// };
 
 // Initialize Firebase
-const firebase = initializeApp(firebaseConfig);
+// const firebase = initializeApp(firebaseConfig);
 
 // Initialize Cloud Firestore and get a reference to the service
 const db = getFirestore(firebase);
 
-export default firebase;
+// export default firebase;
 
 
 
@@ -88,6 +90,7 @@ root.render(
       <Route path="fourth_step2" element={<FourthStep2 />} />
       <Route path="huntprep" element={<HuntPrep />} />
       <Route path="bio_select" element={<BioEdit />} />
+      <Route path="upload_pic" element={<UploadPic />} />
     </Routes>
     
     </BrowserRouter>

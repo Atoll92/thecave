@@ -31,20 +31,20 @@ import { getAuth, onAuthStateChanged } from "firebase/auth";
 const auth = getAuth();
 const user = auth.currentUser;
 
-onAuthStateChanged(auth, (user) => {
-    if (user) {
-      // User is signed in, see docs for a list of available properties
-      // https://firebase.google.com/docs/reference/js/firebase.User
-      const uid = user.uid;
-      console.log("User logged in")
-      console.log(user.uid)
-      // ...
-    } else {
-      // User is signed out
-  console.log("User logged out")
+// onAuthStateChanged(auth, (user) => {
+//     if (user) {
+//       // User is signed in, see docs for a list of available properties
+//       // https://firebase.google.com/docs/reference/js/firebase.User
+//       const uid = user.uid;
+//       console.log("User logged in")
+//       console.log(user.uid)
+//       // ...
+//     } else {
+//       // User is signed out
+//   console.log("User logged out")
   
-    }
-  });
+//     }
+//   });
 
 
   function submitBio () {
@@ -53,7 +53,7 @@ onAuthStateChanged(auth, (user) => {
     const UserModelRef = doc(db, "users", (user.uid));
       var userbio = document.getElementById("bio").value;
   
-  // Set the "capital" field of the city 'DC'
+  // Set the "bio" field of the user
    updateDoc(UserModelRef, {
     bio: userbio
   });
@@ -84,7 +84,7 @@ console.log("userID");
        <p>(describe your journey, your dreams, your fears.. (max limit for zozos : 1000 characters))</p>
         <form>
 
-     <textarea type="text" id="bio" name="fname"/>
+     <textarea type="text" id="bio"></textarea>
      
   </form>
   {/* <button >Submit function</button> */}

@@ -1,0 +1,37 @@
+#character {
+    background-color: antiquewhite;
+    padding: 1vw;
+    background-image: url(https://doublegeste.com/TheCave/media/675804291.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#profile_pic {
+    width: 25vw;
+    /* margin-left: 71vw; */
+    border: 1vw solid black;
+    margin: auto;
+  }
+
+  .page-title {
+    width: 100vw;
+    text-align: center;
+    color: white;
+  }
+
+  #player-info {
+    width: 50vw;
+    margin: auto;
+    
+    text-align: center;
+    /* margin-top: -40vh; */
+    color: black;
+    border-radius: 1em;
+    opacity: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 3vw;
+    background: #ffffff4a;
+    border-radius: 1em;
+    border: solid 3px white;
+    backdrop-filter: blur(3px);
+  }

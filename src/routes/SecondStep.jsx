@@ -63,7 +63,7 @@ const SecondStep = () => {
             <div id="second_step">
         <h2>
         Choose the entity you want to play :</h2>
-        <Link to="/bio_select"><div onClick={submitEntity} class="buttons-entity">
+        <Link to="/upload_pic"><div onClick={submitEntity} class="buttons-entity">
         <button id="1" type="submit" value="human" ><img src="https://doublegeste.com/TheCave/media/BushmanPainting8.svg"/></button><button><img src="https://doublegeste.com/TheCave/media/kisscc0-cave-painting-rock-art-rock-art-saharan-antelope-5b3e85716eee09.4176039315308240494544.svg"/></button><button><img src="https://doublegeste.com/TheCave/media/cRbQhp01.svg"/></button>
         <button ><img src="https://doublegeste.com/TheCave/media/AWF1Cg01.svg"/></button>
         

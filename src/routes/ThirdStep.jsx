@@ -9,6 +9,7 @@ import { getAuth } from "firebase/auth";
 import { doc } from 'firebase/firestore';
 import { updateDoc } from 'firebase/firestore';
 import { db } from '../firebase';
+import { useRef } from 'react';
 
 
 // const firebaseConfig = {
@@ -40,23 +41,62 @@ if (user) {
 
 
 
-function submitTribeStatus () {
+// function submitTribeStatus () {
     
-  const user = auth.currentUser;
-  const UserModelRef = doc(db, "users", (user.uid));
-  var tribe= document.getElementById("2").value;
+// //   const user = auth.currentUser;
+// //   const UserModelRef = doc(db, "users", (user.uid));
+// //   var tribe= document.getElementById("button-alone").value;
+// //   var tribed= document.getElementById("button-tribed").value;
 
-// Set the "capital" field of the city 'DC'
- updateDoc(UserModelRef, {
-  tribe_status: tribe
-});
-console.log(tribe)
-}
+// //   if(document. getElementById('button-alone').clicked == true)
+// // {
+// //   updateDoc(UserModelRef, {
+// //     tribe_status: tribe
+// //   });
+
+// //   console.log("button alone clicked")
+// // } 
+
+// // if(document. getElementById('button-tribed').clicked == true)
+// // {
+// //   updateDoc(UserModelRef, {
+// //     tribe_status: tribed
+// //   });
+// //   console.log("button tribe clicked")
+
+// // }
+
+// // Set the "capital" field of the city 'DC'
+// //  updateDoc(UserModelRef, {
+// //   tribe_status: tribe
+// // });
+// // console.log(tribe)
+
+// // function submitTribeStatus() {
+// //   alert(event.target.id);
+// // }
+
+// }
 
 
 
 
 const ThirdStep = () => {
+  // const ref = useRef(null);
+  const user = auth.currentUser;
+    const UserModelRef = doc(db, "users", (user.uid));
+
+  const submitTribeStatus = event => {
+    updateDoc(UserModelRef, {
+        tribe_status: event.currentTarget.id
+      });
+
+    console.log(event.currentTarget.id);
+
+
+    
+  };
+
     return (
         <div>
             <Header/>
@@ -64,11 +104,11 @@ const ThirdStep = () => {
             <div className="team" id="second_step">
         <h2>
         Are you on your own or are you already part of a tribe ?</h2>
-       <div onClick={submitTribeStatus} class="buttons-entity">
+       <div  class="buttons-entity">
         {/* <button id="1" type="submit" value="human" ><img src="https://doublegeste.com/TheCave/media/BushmanPainting8.svg"/></button><button><img src="https://doublegeste.com/TheCave/media/kisscc0-cave-painting-rock-art-rock-art-saharan-antelope-5b3e85716eee09.4176039315308240494544.svg"/></button><button><img src="https://doublegeste.com/TheCave/media/cRbQhp01.svg"/></button> */}
-        <Link to="/fourth_step"><button id="2" value="alone" ><img src="https://doublegeste.com/TheCave/media/PngItem_452885.svg"/></button></Link>
+        <Link to="/fourth_step"><button onClick={submitTribeStatus} id="alone" value="alone" ><img src="https://doublegeste.com/TheCave/media/PngItem_452885.svg"/></button></Link>
         
-        <Link to="/register_tribe"><button id="3" value="tribed" ><img src="https://doublegeste.com/TheCave/media/662fcfe785a97ab5928ca2f641c4dd05.svg"/></button></Link>
+        <Link to="/register_tribe"><button onClick={submitTribeStatus} id="tribed" value="tribed"  ><img src="https://doublegeste.com/TheCave/media/662fcfe785a97ab5928ca2f641c4dd05.svg"/></button></Link>
         </div>
         
       </div> 
