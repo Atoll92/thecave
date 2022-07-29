@@ -31,6 +31,8 @@ import HuntPrep from './routes/HuntPrep.jsx';
 import BioEdit from './routes/BioEdit';
 import UploadPic from './routes/UploadPic';
 import firebase from './firebase';
+import Gender from './routes/Gender';
+import Destiny from './routes/Destiny';
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -91,6 +93,9 @@ root.render(
       <Route path="huntprep" element={<HuntPrep />} />
       <Route path="bio_select" element={<BioEdit />} />
       <Route path="upload_pic" element={<UploadPic />} />
+      <Route path="gender" element={<Gender />} />
+      <Route path="destiny" element={<Destiny />} />
+
     </Routes>
     
     </BrowserRouter>

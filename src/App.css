@@ -149,7 +149,7 @@ width: 100px;
 border-radius: 1em;
 }
 #second_step  {
-  width: 60vw;
+  width: 80vw;
   margin: auto;
   background: whitesmoke;
   text-align: center;
@@ -165,6 +165,39 @@ border-radius: 1em;
   border: solid 3px white;
   backdrop-filter: blur(3px);
 
+}
+
+#gender {
+  width: 60vw;
+  margin: auto;
+  background: whitesmoke;
+  text-align: center;
+  /* margin-top: -40vh; */
+  color: white;
+  border-radius: 1em;
+  opacity: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 3vw;
+  background: #0000004a;
+  border-radius: 1em;
+  border: solid 3px white;
+  backdrop-filter: blur(3px);
+}
+
+#gender button {
+  cursor: pointer;
+  margin-top: 1vw;
+  width: 100px;
+  border-radius: 1em;
+}
+
+#gender img {
+  width: 120px;
+}
+
+button {
+  cursor: pointer;
 }
 
 #third_step {
@@ -186,10 +219,16 @@ flex-direction: row;
 justify-content: space-around;
 }
 #second_step img {
-  width: 120px;
+  width: 9.4vw;
   cursor: pointer;
 }
-
+#second_step button {
+  background-color:#ffffff2e;
+}
+#second_step button:hover {
+  background-color:#ffffff;
+  transform: scale(1.2);
+}
 #third_step img {
   width: 120px;
   cursor:pointer;
@@ -264,4 +303,15 @@ justify-content: space-around;
 
 .play_buttons:hover {
   filter: invert(100%);
+}
+
+.entity-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+}
+
+.entity-info p {
+  min-width: 10.5vw;
 }

@@ -8,8 +8,9 @@
 #profile_pic {
     width: 25vw;
     /* margin-left: 71vw; */
-    border: 1vw solid black;
-    margin: auto;
+    /* border: 1vw solid wheat; */
+    /* margin: auto; */
+    border-radius: 1em;
   }
 
   .page-title {
@@ -19,7 +20,7 @@
   }
 
   #player-info {
-    width: 50vw;
+    width: 90vw;
     margin: auto;
     
     text-align: center;
@@ -34,4 +35,31 @@
     border-radius: 1em;
     border: solid 3px white;
     backdrop-filter: blur(3px);
+    align-items: flex-start;
+  }
+
+  #username {
+    font-size: 2vw;
+    text-decoration: underline;
+  }
+
+  #picname {
+    background-color: rgba(255, 255, 255, 0.831);
+    border-radius: 1em;
+    border: 2px solid black;
+    padding: 2vw;
+  }
+
+  #subinfos {
+    background-color:  rgba(255, 255, 255, 0.831);;
+    border: 2px solid black;
+    border-radius: 1em;
+    padding: 2vw;
+    margin-top: 2vw;
+    width: 50vw;
+    /* justify-content: flex-start; */
+    display: flex;
+    flex-direction: column;
+    /* justify-content: left; */
+    text-align: left;
   }

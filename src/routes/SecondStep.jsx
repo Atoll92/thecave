@@ -11,6 +11,7 @@ import { doc } from 'firebase/firestore';
 import { updateDoc } from 'firebase/firestore';
 import { db } from '../firebase';
 
+
 // const firebaseConfig = {
 //     apiKey: "AIzaSyBb4lyuCg_sPZ3sWg90Qgh4FDWY_QMce8g",
 //     authDomain: "the-cave-271e0.firebaseapp.com",
@@ -39,37 +40,71 @@ if (user) {
 
 
 
-function submitEntity () {
+// function submitEntity () {
     
-  const user = auth.currentUser;
-  const UserModelRef = doc(db, "users", (user.uid));
-  var animal= document.getElementById("1").value;
+//   const user = auth.currentUser;
+//   const UserModelRef = doc(db, "users", (user.uid));
+//   var animal= document.getElementById("1").value;
 
-// Set the "capital" field of the city 'DC'
- updateDoc(UserModelRef, {
-  entity: animal
-});
-console.log(animal)
-}
+// // Set the "capital" field of the city 'DC'
+//  updateDoc(UserModelRef, {
+//   entity: animal
+// });
+// console.log(animal)
+// }
 
 
 
 
 const SecondStep = () => {
+
+  const user = auth.currentUser;
+
+  const UserModelRef = doc(db, "users", (user.uid));
+
+  const submitSpiritAnimal = event => {
+    updateDoc(UserModelRef, {
+        spirit_animal: event.currentTarget.id
+      });
+      console.log(event.currentTarget.id);
+    }
+ 
+
     return (
         <div>
             <Header/>
             <div className='main-container'>
             <div id="second_step">
         <h2>
-        Choose the entity you want to play :</h2>
-        <Link to="/upload_pic"><div onClick={submitEntity} class="buttons-entity">
-        <button id="1" type="submit" value="human" ><img src="https://doublegeste.com/TheCave/media/BushmanPainting8.svg"/></button><button><img src="https://doublegeste.com/TheCave/media/kisscc0-cave-painting-rock-art-rock-art-saharan-antelope-5b3e85716eee09.4176039315308240494544.svg"/></button><button><img src="https://doublegeste.com/TheCave/media/cRbQhp01.svg"/></button>
-        <button ><img src="https://doublegeste.com/TheCave/media/AWF1Cg01.svg"/></button>
+        Choose your spirit animal :</h2>
+        <Link to="/upload_pic"><div class="buttons-entity">
+        {/* <button id="1" type="submit" value="human" ><img src="https://doublegeste.com/TheCave/media/BushmanPainting8.svg"/></button> */}
+        <button onClick={submitSpiritAnimal}  id="cave_bear"><img src="https://doublegeste.com/TheCave/media/bear.jpg"/></button>
+        <button  onClick={submitSpiritAnimal} id="cave_lion"><img src="https://doublegeste.com/TheCave/media/lion-cave.jpg"/></button>
+        <button onClick={submitSpiritAnimal}  id="wolf"><img src="https://doublegeste.com/TheCave/media/wolf.jpg"/></button>
         
-        <button ><img src="https://doublegeste.com/TheCave/media/aUZYCn01.svg"/></button>
+        <button onClick={submitSpiritAnimal}  id="hyena" ><img src="https://doublegeste.com/TheCave/media/hyenas.webp"/></button>
+        
+        <button onClick={submitSpiritAnimal}  id="auroch" ><img src="https://doublegeste.com/TheCave/media/auroch.jpg"/></button>
+        <button onClick={submitSpiritAnimal}  id="mammoth" ><img src="https://doublegeste.com/TheCave/media/mammoth.jpg"/></button>
+       
+        <button onClick={submitSpiritAnimal}  id="eagle" ><img src="https://doublegeste.com/TheCave/media/eagle.jpg"/></button>
+        <button onClick={submitSpiritAnimal}  id="tiger" ><img src="https://doublegeste.com/TheCave/media/tiger.jpeg"/></button>
         </div>
+
         </Link>
+        <div className='entity-info'>
+          <p>Cave bear</p>
+          <p>Cave lion</p>
+          <p>Dire wolf</p>
+          <p>Pachycrocuta</p>
+          
+          <p>Auroch</p>
+          <p>Wolly mammoth</p>
+          <p>Crowned eagle</p>
+          <p>Saber tooth tiger</p>
+         
+        </div>
       </div> 
       </div>
         </div>

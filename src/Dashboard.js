@@ -49,7 +49,7 @@ function Dashboard() {
           Logout
          </button>
          </div>
-         <Link to="/firstep"><button className="play_buttons">Play</button></Link>
+         <Link to="/gender"><button className="play_buttons">Play</button></Link>
        </div>
        
      </div>

@@ -155,6 +155,58 @@ if (docSnap.exists()) {
         alert("An error occured while fetching user data");
       }
     };
+
+    const [spirit_animal, setSpiritAnimal] = useState("");
+    const fetchSpiritAnimal = async () => {
+      try {
+        const q = query(collection(db, "users"), where("uid", "==", user?.uid));
+        const doc = await getDocs(q);
+        const data = doc.docs[0].data();
+        setSpiritAnimal(data.spirit_animal);
+      } catch (err) {
+        console.error(err);
+        alert("An error occured while fetching user data");
+      }
+    };
+
+    const [tribe_status, setTribeStatus] = useState("");
+    const fetchTribe_status = async () => {
+      try {
+        const q = query(collection(db, "users"), where("uid", "==", user?.uid));
+        const doc = await getDocs(q);
+        const data = doc.docs[0].data();
+        setTribeStatus(data.tribe_status);
+      } catch (err) {
+        console.error(err);
+        alert("An error occured while fetching user data");
+      }
+    };
+
+    const [tribe_name, setTribeName] = useState("");
+    const fetchTribeName = async () => {
+      try {
+        const q = query(collection(db, "users"), where("uid", "==", user?.uid));
+        const doc = await getDocs(q);
+        const data = doc.docs[0].data();
+        setTribeName(data.tribe_name);
+      } catch (err) {
+        console.error(err);
+        alert("An error occured while fetching user data");
+      }
+    };
+
+    const [gender, setGender] = useState("");
+    const fetchGender = async () => {
+      try {
+        const q = query(collection(db, "users"), where("uid", "==", user?.uid));
+        const doc = await getDocs(q);
+        const data = doc.docs[0].data();
+        setGender(data.gender);
+      } catch (err) {
+        console.error(err);
+        alert("An error occured while fetching user data");
+      }
+    };
     // useEffect(() => {
     //   // if (loading) return;
     //   // if (!user) return navigate("/");
@@ -166,6 +218,10 @@ if (docSnap.exists()) {
 // showPicture();
 fetchBio();
 fetchUsername();
+fetchSpiritAnimal();
+fetchTribe_status();
+fetchTribeName();
+fetchGender();
     getuserInfo();
  
     // var username = user.username;
@@ -183,15 +239,21 @@ fetchUsername();
         <h2 className='page-title'>
         My character's page</h2>
         <div id="player-info">
+          <div id="picname">
         <img id="profile_pic" src="" />
-       <p>{username}</p> 
-        <h3>Bio</h3>
-        <p>{bio}</p>
+       <p id="username">{username}</p> 
+       </div>
+       <div id="subinfos">
+       <p><strong>Gender : </strong> {gender}</p>
+        <p><strong>Biography : </strong>{bio}</p>
 
-        <p>{user.email}</p>
+        {/* <p>{user.email}</p> */}
         
-        <p>{user.photoURL}</p>
-        <p>{user.tribe_status}</p>
+        <p><strong>Spirit animal : </strong> {spirit_animal}</p>
+        <p><strong>tribe status : </strong>{tribe_status}</p>
+        <p><strong>Tribe's name : </strong> {tribe_name}</p>
+        
+        </div>
 
         </div>
         

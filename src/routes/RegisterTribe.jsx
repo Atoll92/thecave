@@ -6,7 +6,8 @@ import { getFirestore } from "firebase/firestore";
 import firebaseui from 'firebaseui';
 import { initializeApp } from "firebase/app";
 import { setDoc } from 'firebase/firestore';
-
+import { updateDoc } from 'firebase/firestore';
+import { doc } from 'firebase/firestore';
 import app from 'firebase/app'
 import 'firebase/auth'
 import 'firebase/database'
@@ -86,23 +87,23 @@ onAuthStateChanged(auth, (user) => {
     }
   });
 
-function submit () {
+// function submit () {
     
-    const user = auth.currentUser;
-    const username = name;
-    var name= document.getElementById("name").value;
-    const uid = user.uid;
-const docRef =  setDoc(collection(db, "profils"), {
-    first: name,
-    last: "arthurr",
-    born: 1992,
-    username: user.uid
-  });
-  console.log("Document written with on SUBMIT: ", docRef.id);
-  console.log(docRef.uid)
-// fetchUserName();
+//     const user = auth.currentUser;
+//     const username = name;
+//     var name= document.getElementById("name").value;
+//     const uid = user.uid;
+// const docRef =  setDoc(collection(db, "profils"), {
+//     first: name,
+//     last: "arthurr",
+//     born: 1992,
+//     username: user.uid
+//   });
+//   console.log("Document written with on SUBMIT: ", docRef.id);
+//   console.log(docRef.uid)
+// // fetchUserName();
 
-}
+// }
 
 
 
@@ -131,7 +132,21 @@ const RegisterTribe = () => {
 
 // let userID = Auth.auth().currentUser?.uid
 
+
+
+function submitTribeName() {
+
+  const user = auth.currentUser;
+const UserModelRef = doc(db, "users", (user.uid));
+var tribe_name_value = document.getElementById("tribe_name").value;
+
+// Set the "capital" field of the city 'DC'
+updateDoc(UserModelRef, {
+tribe_name: tribe_name_value
+});
+
 console.log("userID");
+}
 
     return (
         <div>
@@ -142,11 +157,11 @@ console.log("userID");
         What is the name of your tribe ?</h2>
         <form>
 
-     <input type="text" id="name" name="fname"/>
+     <input type="text" id="tribe_name" name="fname"/>
      
   </form>
   {/* <button >Submit function</button> */}
-  <Link to="/fourth_step2"><button className='form_buttons2' onClick={submit} >Submit</button></Link>
+  <Link to="/fourth_step2"><button className='form_buttons2' onClick={submitTribeName} >Submit</button></Link>
       </div> 
       </div>
         </div>

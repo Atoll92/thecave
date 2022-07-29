@@ -88,7 +88,7 @@ console.log("userID");
      
   </form>
   {/* <button >Submit function</button> */}
-  <Link to="/third_step"><button className='form_buttons2' onClick={submitBio} >Submit</button></Link>
+  <Link to="/destiny"><button className='form_buttons2' onClick={submitBio} >Submit</button></Link>
       </div> 
       </div>
         </div>
