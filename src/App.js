@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import Header from './Header';
 import Login from './Login';
+import { Link } from 'react-router-dom';
 
 function App() {
   return (
@@ -16,15 +17,18 @@ function App() {
   
          
   <div className='main-container'>
-          <p class="desc"><strong>The Cave</strong> is an experimental role-playing game aimed at paleolithic culture enthousiasts.
+          <p class="desc"><strong>The Cave</strong> is an historically accurate experimental role-playing game aimed at paleolithic era enthousiasts.
             <br></br>
-            Players are invited to embrace a culture where there is no conceptual divide between human beings and animals, between arts and religion, between the daily life and the extraordinary. <br></br>
+            Players are invited to embrace the aurignacian culture where there is no conceptual divide between human beings and animals, between arts and religion, between the daily life and the extraordinary. <br></br>
             An era when humanity as we perceive it was still blooming on a land of possibles without any consideration for sexual, racial or social status <br></br>
           Tribes of Neanderthal humans and other pack animals are assembling and cooperating in order to survive the Ice Age.<br></br>
           Don't be fooled by the paradise-like setting of abundance of land and food, an harsh world awaits the player.<br></br>
           Prepare for a mystical quest for primal answers, find your tribe and enjoy the hunt !</p>
-        
+          <div>
+         <Link to="https://fr.wikipedia.org/wiki/Aurignacien"> <button className='play_buttons2'>Find more information about the Aurignacian way of life here</button></Link>
           </div>
+          </div>
+        
     
       
   

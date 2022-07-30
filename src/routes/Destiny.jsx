@@ -93,18 +93,36 @@ const Destiny = () => {
       const user = auth.currentUser;
       const UserModelRef = doc(db, "users", (user.uid));
       // var destiny= document.getElementById("name").value;
+      let destiny =""
+
+      if(value == 1) {
+        destiny = "Star spotter"
+      } if(value == 2) {
+        destiny = "Spider fright"
+      } if(value == 3) {
+        destiny = "Thunder dancer"
+      } if(value == 4) {
+        destiny = "Silent hunter"
+      } if(value == 5) {
+        destiny = "Tattoo artist"
+      } if(value == 6) {
+        destiny = "Genetic freak"
+      }
+      
+
 
       updateDoc(UserModelRef, {
-        destiny: value
+        destiny: destiny
       });
-      console.log(value)
+      console.log(destiny)
+     
       // navigate("/third_step")
       
       }
     
     // Set the "capital" field of the city 'DC'
-     
-   
+    //  let destiny = destiny;
+    // const destiny_trait = destiny;
     
 
     return (
@@ -116,8 +134,12 @@ const Destiny = () => {
         Now roll a dice to seal your destiny</h2>
        <div  class="buttons-entity">
         {/* <button id="1" type="submit" value="human" ><img src="https://doublegeste.com/TheCave/media/BushmanPainting8.svg"/></button><button><img src="https://doublegeste.com/TheCave/media/kisscc0-cave-painting-rock-art-rock-art-saharan-antelope-5b3e85716eee09.4176039315308240494544.svg"/></button><button><img src="https://doublegeste.com/TheCave/media/cRbQhp01.svg"/></button> */}
-        <Link  to="/third_step"> <Dice sound="https://doublegeste.com/TheCave/media/mystic.wav" onRoll={(value) =>  SubmitDestiny (value)} /></Link>
+        <Dice sound="https://doublegeste.com/TheCave/media/mystic.wav" onRoll={(value) =>  SubmitDestiny (value)} />
         </div>
+        {/* <p>{destiny_trait}</p> */}
+        <p></p>
+        <Link  to="/third_step"><button className="play_buttons2" >Proceed</button> </Link>
+
         {/* <button className='form_buttons2' >Submit</button> */}
       </div> 
       </div>

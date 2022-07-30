@@ -71,8 +71,8 @@ const FourthStep2 = () => {
         <h2>
         Your tribe has been notified and will soon head your way to meet you !</h2>
         <p>You will receive an invitation link by mail</p>
-        <Link to="/dashboard">
-        <button >Go back to dashboard</button>
+        <Link to="/tools">
+        <button className="play_buttons2" >Proceed</button>
        
         </Link>
       </div> 

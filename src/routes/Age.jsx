@@ -48,17 +48,17 @@ onAuthStateChanged(auth, (user) => {
 
 
 
-function submitName () {
+function submitAge () {
     
   const user = auth.currentUser;
   const UserModelRef = doc(db, "users", (user.uid));
-  var username= document.getElementById("name").value;
+  var age= document.getElementById("age").value;
 
 // Set the "capital" field of the city 'DC'
  updateDoc(UserModelRef, {
-  username: username
+  age: age
 });
-console.log(username)
+console.log(age)
 }
 
 
@@ -68,7 +68,7 @@ console.log(username)
 
 
 
-const FirstStep = () => {
+const Age = () => {
 
 
 
@@ -80,18 +80,18 @@ console.log("userID");
             <div className='main-container' >
             <div id="first_step">
         <h2>
-        Start your adventure by chosing a name :</h2>
+        How old are you ?</h2>
         <form>
 
-     <input type="text" id="name" name="fname"/>
+     <input type="text" id="age" name="fname"/>
      
   </form>
   {/* <button >Submit function</button> */}
-  <Link to="/age"><button className="play_buttons2" onClick={submitName} >Submit</button></Link>
+  <Link to="/secondstep"><button className='form_buttons2' onClick={submitAge} >Submit</button></Link>
       </div> 
       </div>
         </div>
     );
 };
 // export {username};
-export default FirstStep;
+export default Age;

@@ -161,7 +161,7 @@ console.log("userID");
      
   </form>
   {/* <button >Submit function</button> */}
-  <Link to="/fourth_step2"><button className='form_buttons2' onClick={submitTribeName} >Submit</button></Link>
+  <Link to="/fourth_step2"><button className="play_buttons2" onClick={submitTribeName} >Submit</button></Link>
       </div> 
       </div>
         </div>

@@ -5,7 +5,7 @@ const Tribe = () => {
     return (
         <div>
             <Header/>
-            <div id="tribe">
+            <div id="mytribe">
         <h2>
         My tribe status</h2>
         

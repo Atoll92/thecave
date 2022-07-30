@@ -148,7 +148,7 @@ console.log("userID");
      
  <button onClick={uploadImage}> Upload Pic</button>
   {/* <button >Submit function</button> */}
-  <Link to="/bio_select"><button className='form_buttons2'  >Submit</button></Link>
+  <Link to="/bio_select"><button className="play_buttons2"  >Submit</button></Link>
       </div> 
       </div>
         </div>

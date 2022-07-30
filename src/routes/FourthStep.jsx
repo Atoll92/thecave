@@ -71,8 +71,8 @@ const FourthStep = () => {
         <h2>
         You will soon be matched with a random but welcoming tribe !</h2>
         <p>You will receive an invitation link by mail</p>
-        <Link to="/dashboard">
-        <button >Go back to dashboard</button>
+        <Link to="/tool">
+        <button className="play_buttons2" >Proceed</button>
        
         </Link>
       </div> 

@@ -207,6 +207,46 @@ if (docSnap.exists()) {
         alert("An error occured while fetching user data");
       }
     };
+
+    const [age, setAge] = useState("");
+    const fetchAge = async () => {
+      try {
+        const q = query(collection(db, "users"), where("uid", "==", user?.uid));
+        const doc = await getDocs(q);
+        const data = doc.docs[0].data();
+        setAge(data.age);
+      } catch (err) {
+        console.error(err);
+        alert("An error occured while fetching user data");
+      }
+    };
+
+
+    const [destiny, setDestiny] = useState("");
+    const fetchDestiny = async () => {
+      try {
+        const q = query(collection(db, "users"), where("uid", "==", user?.uid));
+        const doc = await getDocs(q);
+        const data = doc.docs[0].data();
+        setDestiny(data.destiny);
+      } catch (err) {
+        console.error(err);
+        alert("An error occured while fetching user data");
+      }
+    };
+
+    const [initial_tool, setInitialTool] = useState("");
+    const fetchInitialTool = async () => {
+      try {
+        const q = query(collection(db, "users"), where("uid", "==", user?.uid));
+        const doc = await getDocs(q);
+        const data = doc.docs[0].data();
+        setInitialTool(data.initial_tool);
+      } catch (err) {
+        console.error(err);
+        alert("An error occured while fetching user data");
+      }
+    };
     // useEffect(() => {
     //   // if (loading) return;
     //   // if (!user) return navigate("/");
@@ -217,12 +257,15 @@ if (docSnap.exists()) {
   
 // showPicture();
 fetchBio();
+fetchAge();
 fetchUsername();
 fetchSpiritAnimal();
 fetchTribe_status();
 fetchTribeName();
 fetchGender();
+fetchDestiny();
     getuserInfo();
+    fetchInitialTool();
  
     // var username = user.username;
     // const UserModelRef = doc(db, "users", (user.uid));
@@ -245,11 +288,14 @@ fetchGender();
        </div>
        <div id="subinfos">
        <p><strong>Gender : </strong> {gender}</p>
+       <p><strong>Age : </strong>{age}</p>
         <p><strong>Biography : </strong>{bio}</p>
 
         {/* <p>{user.email}</p> */}
         
         <p><strong>Spirit animal : </strong> {spirit_animal}</p>
+        <p><strong>Destiny trait : </strong> {destiny}</p>
+        <p><strong>Master tool : </strong> {initial_tool}</p>
         <p><strong>tribe status : </strong>{tribe_status}</p>
         <p><strong>Tribe's name : </strong> {tribe_name}</p>
         
@@ -257,14 +303,18 @@ fetchGender();
 
         </div>
         
+        <div>
         
         
         {/* <img className="profile_pic" src={"gs://the-cave-271e0.appspot.com/images/$ user.uid}/> */}
-        
+        <Link to="/huntprep"><button className='play_buttons2'>Get ready for hunting !</button></Link>
+        {/* <Link to="/huntprep"><button>Go to the cave</button></Link> */}
+        <Link to="/huntprep" ><button className='play_buttons2'>Reach out to your local shaman</button></Link>
       
-        <Link to="/huntprep">Prepare for the hunt</Link>
-        
+       
+        </div>
       </div> 
+
         </div>
     );
 };

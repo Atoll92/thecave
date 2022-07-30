@@ -143,11 +143,11 @@ text-align: center;
 
 }
 
- #first_step button {
+ /* #first_step button {
   margin-top: 1vw;
 width: 100px;
 border-radius: 1em;
-}
+} */
 #second_step  {
   width: 80vw;
   margin: auto;
@@ -167,6 +167,48 @@ border-radius: 1em;
 
 }
 
+#tools {
+  width: 90vw;
+  margin: auto;
+  background: whitesmoke;
+  text-align: center;
+  /* margin-top: -40vh; */
+  color: white;
+  border-radius: 1em;
+  opacity: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 3vw;
+  background: #0000004a;
+  border-radius: 1em;
+  border: solid 3px white;
+  backdrop-filter: blur(3px);
+
+}
+
+#tools .buttons-entity {
+  margin: 1vw;
+}
+#tools img {
+  width: 9.4vw;
+  cursor: pointer;
+}
+#tools .buttons-entity button {
+  background-color:transparent;
+  color: white;
+  border: none;
+  border-radius: 1em;
+}
+#tools .buttons-entity button p {
+  background-color:transparent;
+  /* color: white; */
+  font-size: 1.5vw;
+}
+#tools .buttons-entity button:hover {
+  background-color:#ffffff65;
+  transform: scale(1.2);
+  color: black;
+}
 #gender {
   width: 60vw;
   margin: auto;
@@ -185,12 +227,12 @@ border-radius: 1em;
   backdrop-filter: blur(3px);
 }
 
-#gender button {
+/* #gender button {
   cursor: pointer;
   margin-top: 1vw;
   width: 100px;
   border-radius: 1em;
-}
+} */
 
 #gender img {
   width: 120px;
@@ -198,6 +240,7 @@ border-radius: 1em;
 
 button {
   cursor: pointer;
+  transition: all 0.3s ease-in-out;
 }
 
 #third_step {
@@ -222,9 +265,9 @@ justify-content: space-around;
   width: 9.4vw;
   cursor: pointer;
 }
-#second_step button {
+/* #second_step button {
   background-color:#ffffff2e;
-}
+} */
 #second_step button:hover {
   background-color:#ffffff;
   transform: scale(1.2);
@@ -295,6 +338,29 @@ justify-content: space-around;
     
 }
 
+.play_buttons2 {
+  border: solid 1px white;
+    border-radius: 1em;
+    /* color: white; */
+    width: fit-content;
+    font-size: 2vw;
+    text-transform: uppercase;
+    padding: 1vw;
+    display: block;
+    margin: auto;
+    background-color: #e3e3e380;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    margin-top: 2vw;
+    /* position: absolute; */
+    
+    /* left: 30vw; */
+    /* margin-top: 15vw; */
+
+    
+}
+
 .UserInfo {
   color: white;
   z-index: 2;
@@ -302,6 +368,10 @@ justify-content: space-around;
 }
 
 .play_buttons:hover {
+  filter: invert(100%);
+}
+
+.play_buttons2:hover {
   filter: invert(100%);
 }
 
@@ -314,4 +384,23 @@ justify-content: space-around;
 
 .entity-info p {
   min-width: 10.5vw;
+}
+
+
+#art {
+  width: 100vw;
+  padding: 5px;
+  height: 100%;
+background-size: cover;
+background-repeat: no-repeat;
+background-image: url(https://doublegeste.com/TheCave/media/felins.jpeg);
+ 
+}
+#mytribe {
+  width: 100vw;
+  height: 100%;
+  padding: 5px;
+background-size: cover;
+background-repeat: no-repeat;
+background-image: url(https://doublegeste.com/TheCave/media/aurignac.jpg);
 }
