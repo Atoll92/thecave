@@ -1,4 +1,15 @@
-// import React from 'react'
+import React from 'react'
+
+
+
+function HuntPrep() {
+  return (
+    <div><h1>Work in progress ! </h1>
+    <h2>Coming very soon, before the end of mesolithic period...  I hope !</h2></div>
+  )
+}
+
+export default HuntPrep
 // import { getAuth } from 'firebase/auth';
 
 // import { doc, setDoc } from "firebase/firestore"; 
