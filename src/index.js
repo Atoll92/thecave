@@ -35,6 +35,7 @@ import Gender from './routes/Gender';
 import Destiny from './routes/Destiny';
 import Age from './routes/Age';
 import Tools from './routes/Tools';
+import Hunt from './routes/hunt';
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -99,6 +100,7 @@ root.render(
       <Route path="destiny" element={<Destiny />} />
       <Route path="age" element={<Age />} />
       <Route path="tools" element={<Tools />} />
+      <Route path="hunt" element={<Hunt />} />
 
     </Routes>
     

@@ -3,6 +3,12 @@ import './App.css';
 import Header from './Header';
 import Login from './Login';
 import { Link } from 'react-router-dom';
+import firebase from './firebase';
+
+import { getAuth } from 'firebase/auth';
+
+const auth = getAuth(firebase);
+const user = auth.currentUser;
 
 function App() {
   return (
@@ -25,7 +31,7 @@ function App() {
           Don't be fooled by the paradise-like setting of abundance of land and food, an harsh world awaits the player.<br></br>
           Prepare for a mystical quest for primal answers, find your tribe and enjoy the hunt !</p>
           <div>
-         <Link to="https://fr.wikipedia.org/wiki/Aurignacien"> <button className='play_buttons2'>Find more information about the Aurignacian way of life here</button></Link>
+          <a href="https://fr.wikipedia.org/wiki/Aurignacien"><button  className='play_buttons2'>Find more information about the Aurignacian way of life here</button></a>
           </div>
           </div>
         

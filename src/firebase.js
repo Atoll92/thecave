@@ -71,7 +71,7 @@ const logInWithEmailAndPassword = async (email, password) => {
     try {
       const res = await createUserWithEmailAndPassword(auth, email, password);
       const user = res.user;
-//       const docRef = doc(app, "users", user.uid)
+      // const docRef = doc(app, "users", user.uid)
 // await setDoc(docRef, {
 //   firstName: fname.value,
 //   lastName: lname.value,
