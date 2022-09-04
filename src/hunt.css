@@ -36,5 +36,14 @@
     background-image: url(huntbg2.webp);
   
   }
+  #huntcontainer2 {
+    /* height: 50vw; */
+    background-color: black;
+    background-size: contain;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-image: url(/public/1280px-algerien_desert.jpg);
+  
+  }
   
  

@@ -56,7 +56,7 @@ if (user) {
 
 
 
-const Tools = () => {
+const Weapons = () => {
 
   const user = auth.currentUser;
 
@@ -64,7 +64,7 @@ const Tools = () => {
 
   const submitTools = event => {
     updateDoc(UserModelRef, {
-        initial_tool: event.currentTarget.id
+        initial_weapon: event.currentTarget.id
       });
       console.log(event.currentTarget.id);
     }
@@ -77,24 +77,24 @@ const Tools = () => {
             <div id="tools">
         <h2>
         Choose one tool you want to start with :</h2>
-        <Link to="/weapons">
+        <Link to="/character">
         <div class="buttons-entity">
         {/* <button id="1" type="submit" value="human" ><img src="https://doublegeste.com/TheCave/media/BushmanPainting8.svg"/></button> */}
-        {/* <button onClick={submitTools}  id="spear"><img src="https://doublegeste.com/TheCave/media/spear.png"/><p>Spear</p></button> */}
-        <button  onClick={submitTools} id="racloir"><img src="https://doublegeste.com/TheCave/media/racloir.jpg"/><p>Racloir</p></button>
-        {/* <button onClick={submitTools}  id="sagaie"><img src="https://doublegeste.com/TheCave/media/sagaie.jpeg"/><p>Sagaie</p></button> */}
+        <button onClick={submitTools}  id="spear"><img src="https://doublegeste.com/TheCave/media/spear.png"/><p>Spear</p></button>
+        {/* <button  onClick={submitTools} id="racloir"><img src="https://doublegeste.com/TheCave/media/racloir.jpg"/><p>Racloir</p></button> */}
+        <button onClick={submitTools}  id="sagaie"><img src="https://doublegeste.com/TheCave/media/sagaie.jpeg"/><p>Sagaie</p></button>
         
-        <button onClick={submitTools}  id="retouchoir" ><img src="https://doublegeste.com/TheCave/media/retouchoir.jpg"/><p>Retouchoir</p></button>
+        {/* <button onClick={submitTools}  id="retouchoir" ><img src="https://doublegeste.com/TheCave/media/retouchoir.jpg"/><p>Retouchoir</p></button> */}
         
-        <button onClick={submitTools}  id="baton percé" ><img src="https://doublegeste.com/TheCave/media/baton-perce.jpg"/><p>Baton percé</p></button>
-        </div>
-        <div class="buttons-entity">
-        <button onClick={submitTools}  id="broyeur de couleurs" ><img src="https://doublegeste.com/TheCave/media/broyeur.jpg"/><p>Broyeur de couleurs</p></button>
+        {/* <button onClick={submitTools}  id="baton percé" ><img src="https://doublegeste.com/TheCave/media/baton-perce.jpg"/><p>Baton percé</p></button> */}
+        {/* </div>
+        <div class="buttons-entity"> */}
+        {/* <button onClick={submitTools}  id="broyeur de couleurs" ><img src="https://doublegeste.com/TheCave/media/broyeur.jpg"/><p>Broyeur de couleurs</p></button> */}
         {/* <button onClick={submitTools}  id="Bow trap" ><img src="https://doublegeste.com/TheCave/media/bowtrap.png"/><p>Bow trap</p></button> */}
 
-        {/* <button onClick={submitTools}  id="fish hooks" ><img src="https://doublegeste.com/TheCave/media/hameçon.jpg"/><p>Fish hooks</p></button> */}
-        {/* <button onClick={submitTools}  id="Bow" ><img src="https://doublegeste.com/TheCave/media/bow.jpg"/><p>Bow</p></button> */}
-        <button onClick={submitTools}  id="Axe" ><img src="https://doublegeste.com/TheCave/media/axe.jpg"/><p>Hache</p></button>
+        <button onClick={submitTools}  id="fish hooks" ><img src="https://doublegeste.com/TheCave/media/hameçon.jpg"/><p>Fish hooks</p></button>
+        <button onClick={submitTools}  id="Bow" ><img src="https://doublegeste.com/TheCave/media/bow.jpg"/><p>Bow</p></button>
+        {/* <button onClick={submitTools}  id="Axe" ><img src="https://doublegeste.com/TheCave/media/axe.jpg"/><p>Hache</p></button> */}
 
         </div>
         </Link>
@@ -118,4 +118,4 @@ const Tools = () => {
     );
 };
 
-export default Tools;
+export default Weapons;

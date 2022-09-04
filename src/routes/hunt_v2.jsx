@@ -18,6 +18,7 @@ import Header from "../Header";
 import "../hunt.css"
 
 import { Trail } from "@react-three/drei";
+import { useEffect } from "react";
 
 function CoreDiceW(props) {
   const [active, setActive] = useState(0);
@@ -115,6 +116,13 @@ function CoreDiceW(props) {
 }
 
 function CoreDice(props) {
+  const texture_1 = useMemo(() => new THREE.TextureLoader().load('backdice.jpeg'), []);
+  const texture_2 = useMemo(() => new THREE.TextureLoader().load('mammoth.jpg'), []);
+  const texture_3 = useMemo(() => new THREE.TextureLoader().load('lion-cave.jpg'), []);
+  const texture_4 = useMemo(() => new THREE.TextureLoader().load('tiger.jpeg'), []);
+  const texture_5 = useMemo(() => new THREE.TextureLoader().load('backdice.jpeg'), []);
+  const texture_6 = useMemo(() => new THREE.TextureLoader().load('loup.jpg'), []);
+
   const [active, setActive] = useState(0);
   const { spring } = useSpring({
     spring: active,
@@ -160,7 +168,7 @@ function CoreDice(props) {
   const [rolled, setRolled] = useState(false)
 
   const { scale } = useSpring({ scale: active ? 1.5 : 1 , config: config.wobbly,})
-  const { color } = useSpring({ color: active ? "blue" : "red" , config: config.wobbly,})
+  // const { color } = useSpring({ color: active ? "blue" : "red" , config: config.wobbly,})
   const position = useMousePosition();
   // Subscribe this component to the render-loop, rotate the mesh every frame
   useFrame((state, delta) => (mesh.current.rotation.x += 0.001))
@@ -191,7 +199,7 @@ function CoreDice(props) {
     
     scale-x={scale}
     scale-z={scale}
-    color={color}
+    // color={color}
     
     
     ref={mesh}
@@ -200,8 +208,14 @@ function CoreDice(props) {
     onPointerOver={(event) => setHover(true)}
     onPointerOut={(event) => setHover(false)}>
    
-    <icosahedronGeometry args={[2, 0]} roughness={6} transmission={1} thickness={2} />
-    <meshPhongMaterial wireframe opacity={0.6} transparent depthBuffer={depthBuffer}  color={"white"} />
+    <icosahedronBufferGeometry args={[2, 0]} roughness={6} transmission={1} thickness={2} />
+    <meshPhongMaterial transparent opacity={0.9}    reflectivity={1} shininess={150} metalness="1"  mirror={1} map={texture_1} attach="material-0" />
+      <meshPhongMaterial transparent opacity={0.9}    reflectivity={1} shininess={150} metalness="1"  mirror={1} map={texture_2} attach="material-1" />
+      <meshPhongMaterial  transparent opacity={0.9}    reflectivity={1} shininess={150} metalness="1"  mirror={1} map={texture_3} attach="material-2" />
+      <meshPhongMaterial  transparent opacity={0.9}     reflectivity={1} shininess={150} metalness="1"  mirror={1} map={texture_4} attach="material-3" />
+      <meshPhongMaterial  transparent opacity={0.9}   reflectivity={1} shininess={150} metalness="1"  mirror={1} map={texture_5} attach="material-4" />
+      <meshPhongMaterial   transparent opacity={0.9}     reflectivity={1} shininess={150} metalness="1"  mirror={1}map={texture_6} attach="material-5" />
+    {/* <meshPhongMaterial wireframe opacity={0.6} transparent depthBuffer={depthBuffer}  color={"white"} /> */}
     {/* <meshPhongMaterial wireframe transparent color="red" opacity={0.5} /> */}
   </animated.mesh>
     
@@ -285,7 +299,7 @@ const Box = (props) => {
       mesh.current.rotation.y += delta * 2 * rotSpeed;
       if(rotSpeed > 0.0)
       {
-        setrotSpeed(rotSpeed => rotSpeed - 0.01)
+        setrotSpeed(rotSpeed => rotSpeed - 0.02)
       }else{
         if (predator == "Lion") {
         mesh.current.rotation.x = Math.PI/2;
@@ -294,6 +308,7 @@ const Box = (props) => {
         if (predator == "Mammoth") {
           mesh.current.rotation.x = 3 * Math.PI;
           mesh.current.rotation.y = 0;
+
         }
         if (predator == "Tigre dents de sabre") {
           mesh.current.rotation.x = Math.PI;
@@ -302,19 +317,23 @@ const Box = (props) => {
 
         if (predator == "Hyène") {
           mesh.current.rotation.x = 3 * Math.PI/2;
-          mesh.current.rotation.y = 3 * Math.PI/2;
-        }
-        if (predator == "Ours des cavernes") {
-          mesh.current.rotation.x = Math.PI;
           mesh.current.rotation.y = 0;
         }
-        if (predator == "Loup des cavernes") {
+        if (predator == "Ours des cavernes") {
           mesh.current.rotation.x = 3 * Math.PI/2;
           mesh.current.rotation.y = 0;
         }
+        if (predator == "Loup des cavernes") {
+          mesh.current.rotation.x = Math.PI;
+          
+          mesh.current.rotation.y =0;
+        }
       }
     }
-   
+    console.log(predator)
+    // return predator
+    // const predator = predator;
+
   });
 
 
@@ -432,7 +451,6 @@ const BoxW = (props) => {
     setRolled(!rolled)
     // RollPredator();
     setPredator(rolledpred)
-  
 
     if (rolled) {
       // stopdice()
@@ -473,26 +491,38 @@ const BoxW = (props) => {
 }
 
 
-const Hunt = () => {
+const HuntV2 = () => {
 
- 
+
 
   const springProps = useSpring({
     from: { x:10 },
     to: { x: 100}
   })
 
+  var predator = RollPredator() ;
 
+//   function bckgd()  {
+   
+//   var canvashunt = document.getElementsByClassName("canvashunt");
+//   console.log(canvashunt);
+//   // var ctx = canvashunt[0].getContext("2d");
+//   // console.log(ctx);
+// // ctx.fillStyle = "blue";
+// // ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+//   }
+  // useEffect(() => {
+  //   bckgd();  });
+  
  
-
-
 
   return (
     <div >
     <h1>Hunting Area</h1>
-      <div id="huntcontainer">
-    <Canvas
-   colorManagement={false}  camera={{ fov: 70, near: 0.01, far: 100, position: [0, 0, 12] }} style={{ background : "transparent" }}>
+      <div id="huntcontainer2">
+    <Canvas 
+   colorManagement={true} style={ {backgroundColor:"rgba(56, 37, 13, 0.7)"}}  camera={{ fov: 70, near: 0.01, far: 100, position: [0, 0, 12] }} >
       
     <ambientLight intensity={1} />
       <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
@@ -508,10 +538,14 @@ const Hunt = () => {
       <CoreDiceW  />
       <BoxMultiple/>
     </Canvas>
+
+    <div id="dice_results">
+      <p id="predator">{predator}</p>
     </div>
     
+    </div>
     </div>
   );
 }
 
-export default Hunt;
+export default HuntV2;

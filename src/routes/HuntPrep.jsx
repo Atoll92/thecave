@@ -1,11 +1,13 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 
 
 function HuntPrep() {
   return (
     <div><h1>Work in progress ! </h1>
-    <h2>Coming very soon, before the end of mesolithic period...  I hope !</h2></div>
+    <h2>Coming very soon, before the end of mesolithic period...  I hope !</h2>
+    <Link to="/huntv2">Primitive Hunt</Link></div>
   )
 }
 

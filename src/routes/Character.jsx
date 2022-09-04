@@ -17,6 +17,17 @@ import { query, collection, getDocs, where } from "firebase/firestore";
 import { useEffect } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 
+import RetouchoirImg from '../media/retouchoir.jpg'
+import axeImg from '../media/axe.jpg'
+import racloirImg from '../media/racloir.jpg'
+import broyeurImg from '../media/broyeur.jpg'
+import batonImg from '../media/baton-perce.jpg'
+import spearImg from '../media/spear.png'
+import sagaieImg from '../media/sagaie.jpeg'
+import fish_hooksImg from '../media/hameçon.jpg'
+import bowImg from '../media/bow.jpg'
+
+
 import "../character.css";
 
 
@@ -247,15 +258,30 @@ if (docSnap.exists()) {
         alert("An error occured while fetching user data");
       }
     };
+
+    const [initial_weapon, setInitialWeapon] = useState("");
+    const fetchInitialWeapon = async () => {
+      try {
+        const q = query(collection(db, "users"), where("uid", "==", user?.uid));
+        const doc = await getDocs(q);
+        const data = doc.docs[0].data();
+        setInitialWeapon(data.initial_weapon);
+      } catch (err) {
+        console.error(err);
+        alert("An error occured while fetching user data");
+      }
+    };
     // useEffect(() => {
     //   // if (loading) return;
     //   // if (!user) return navigate("/");
     //   
     // }, [user]);
 
+
     
   
 // showPicture();
+
 fetchBio();
 fetchAge();
 fetchUsername();
@@ -266,6 +292,7 @@ fetchGender();
 fetchDestiny();
     getuserInfo();
     fetchInitialTool();
+    fetchInitialWeapon();
  
     // var username = user.username;
     // const UserModelRef = doc(db, "users", (user.uid));
@@ -273,7 +300,42 @@ fetchDestiny();
     // const data = docSnap.data();
     // const entity = data.entity;
     
-    
+    let tool_imageURL = "";
+  if (initial_tool == "retouchoir")
+  tool_imageURL = RetouchoirImg;
+ if (initial_tool == "axe")
+ tool_imageURL = axeImg;
+  console.log("initial tool" + initial_tool)
+
+  if (initial_tool == "racloir")
+  tool_imageURL = racloirImg;
+
+  if (initial_tool == "broyeur de couleurs")
+  tool_imageURL = broyeurImg;
+
+  if (initial_tool == "baton percé")
+  tool_imageURL = batonImg;
+
+
+  let weapon_imageURL = "";
+  if (initial_weapon == "spear")
+  weapon_imageURL = spearImg;
+ if (initial_weapon == "sagaie")
+ weapon_imageURL = sagaieImg;
+  console.log("initial weapon" + initial_weapon)
+
+  if (initial_weapon == "Bow")
+  weapon_imageURL = bowImg;
+
+  if (initial_weapon == "fish hooks")
+  weapon_imageURL = fish_hooksImg;
+
+  if (initial_weapon == "baton percé")
+  weapon_imageURL = batonImg;
+
+
+
+
 
     return (
         <div>
@@ -286,7 +348,22 @@ fetchDestiny();
         <img id="profile_pic" src="" />
        <p id="username">{username}</p> 
        </div>
+       <div id="player_row">
+        
+        
+        {/* <img className="profile_pic" src={"gs://the-cave-271e0.appspot.com/images/$ user.uid}/> */}
+        <Link to="/huntprep"><button className='play_buttons2'>Get ready for hunting !</button></Link>
+        {/* <Link to="/huntprep"><button>Go to the cave</button></Link> */}
+        <Link to="/huntprep" ><button className='play_buttons2'>Reach out to your local shaman</button></Link>
+        <Link to="/huntprep"><button className='play_buttons2'>Summon a meeting</button></Link>
+        {/* <Link to="/huntprep"><button>Go to the cave</button></Link> */}
+        <Link to="/ritual" ><button className='play_buttons2'>Perform a ritual</button></Link>
+      
+       
+        </div>
+       <div id="subcontainer">
        <div id="subinfos">
+       <h3>Personality</h3>
        <p><strong>Gender : </strong> {gender}</p>
        <p><strong>Age : </strong>{age}</p>
         <p><strong>Biography : </strong>{bio}</p>
@@ -295,24 +372,23 @@ fetchDestiny();
         
         <p><strong>Spirit animal : </strong> {spirit_animal}</p>
         <p><strong>Destiny trait : </strong> {destiny}</p>
-        <p><strong>Master tool : </strong> {initial_tool}</p>
+        {/* <p><strong>Master tool : </strong> {initial_tool}</p> */}
         <p><strong>tribe status : </strong>{tribe_status}</p>
         <p><strong>Tribe's name : </strong> {tribe_name}</p>
         
         </div>
+        <div id="subinfos">
+          <h3>Inventory</h3>
+          <p><strong>{initial_tool}</strong> </p>
+          <img src={tool_imageURL}/>
+          <p><strong>{initial_weapon}</strong> </p>
+          <img src={weapon_imageURL}/>
+        </div>
+        </div>
 
         </div>
         
-        <div>
-        
-        
-        {/* <img className="profile_pic" src={"gs://the-cave-271e0.appspot.com/images/$ user.uid}/> */}
-        <Link to="/huntprep"><button className='play_buttons2'>Get ready for hunting !</button></Link>
-        {/* <Link to="/huntprep"><button>Go to the cave</button></Link> */}
-        <Link to="/huntprep" ><button className='play_buttons2'>Reach out to your local shaman</button></Link>
       
-       
-        </div>
       </div> 
 
         </div>

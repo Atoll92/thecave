@@ -36,6 +36,9 @@ import Destiny from './routes/Destiny';
 import Age from './routes/Age';
 import Tools from './routes/Tools';
 import Hunt from './routes/hunt';
+import HuntV2 from './routes/hunt_v2';
+import Weapons from './routes/Weapons';
+import Ritual from './routes/Ritual';
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -101,7 +104,9 @@ root.render(
       <Route path="age" element={<Age />} />
       <Route path="tools" element={<Tools />} />
       <Route path="hunt" element={<Hunt />} />
-
+      <Route path="huntv2" element={<HuntV2 />} />
+      <Route path="weapons" element={<Weapons />} />
+      <Route path="ritual" element={<Ritual />} />
     </Routes>
     
     </BrowserRouter>
