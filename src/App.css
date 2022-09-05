@@ -393,8 +393,10 @@ justify-content: space-around;
   height: 100%;
 background-size: cover;
 background-repeat: no-repeat;
-background-image: url(https://doublegeste.com/TheCave/media/le-releve-numerique-3D-de-la-grotte-ornee-du-pont-d-arc.webp);
- 
+
+/* background-image: url(https://doublegeste.com/TheCave/media/le-releve-numerique-3D-de-la-grotte-ornee-du-pont-d-arc.webp); */
+ background-image: url(https://doublegeste.com/TheCave/media/image_5951_1-Giant-Sloth-Hunt.jpg);
+
 }
 #mytribe {
   width: 100vw;
@@ -403,6 +405,16 @@ background-image: url(https://doublegeste.com/TheCave/media/le-releve-numerique-
 background-size: cover;
 background-repeat: no-repeat;
 background-image: url(https://doublegeste.com/TheCave/media/aurignac.jpg);
+}
+
+#mytribe #picname {
+  width:25vw;
+}
+#mytribe #picname #username {
+text-align: center;}
+
+#mytribe #picname #profile_pic {
+  width:20vw;
 }
 
 #ritual {
@@ -426,6 +438,7 @@ background-image: url(https://doublegeste.com/TheCave/media/ritual.jpg);
   width: fit-content;
   margin: auto;
   position: relative;
+  display: none;
 }
 
 /* #dice_cont canvas {
