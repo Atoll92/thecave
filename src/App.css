@@ -425,4 +425,14 @@ background-image: url(https://doublegeste.com/TheCave/media/ritual.jpg);
 #dice_cont {
   width: fit-content;
   margin: auto;
+  position: relative;
 }
+
+/* #dice_cont canvas {
+  position: absolute;
+} */
+
+/* #dices_cont {
+  display: flex;
+  margin: auto;
+} */
