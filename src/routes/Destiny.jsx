@@ -111,9 +111,15 @@ const Destiny = () => {
       
 
 
+
       updateDoc(UserModelRef, {
         destiny: destiny
       });
+
+      function show_results(destiny) {
+        document.getElementById(dice_result)
+
+      }
       console.log(destiny)
      
       // navigate("/third_step")
